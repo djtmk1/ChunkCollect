@@ -1,0 +1,78 @@
+# ChunkCollect+ Configuration
+
+# Core Settings
+max-collectors-per-chunk: 1
+default-collection-interval: 20
+default-storage-range: 5
+collector-block-type: HOPPER
+filters-enabled: true
+economy-enabled: false
+
+# Chest Linking Settings
+chest-linking:
+  auto-linking-enabled: true
+  max-auto-linked-chests: 5
+  max-manual-linked-chests: 5
+  auto-link-on-placement: true
+
+# Database Settings
+database:
+  type: SQLITE  # SQLITE or MYSQL
+  sqlite:
+    file: collectors.db  # SQLite database file name
+  mysql:
+    host: localhost
+    port: 3306
+    database: chunkcollect
+    username: root
+    password: password
+    table-prefix: cc_
+
+# Upgrade Settings
+upgrades:
+  speed:
+    max-level: 5
+    cost-type: XP  # XP, ITEM, or ECONOMY
+    cost-per-level: 5
+    # Example of level-specific costs:
+    # levels:
+    #   1: 5   # Level 1 costs 5 XP
+    #   2: 10  # Level 2 costs 10 XP
+    #   3: 15  # Level 3 costs 15 XP
+    #   4: 20  # Level 4 costs 20 XP
+    #   5: 25  # Level 5 costs 25 XP
+  range:
+    max-level: 3
+    cost-type: XP
+    cost-per-level: 10
+    # Example of level-specific costs:
+    # levels:
+    #   1: 10  # Level 1 costs 10 XP
+    #   2: 20  # Level 2 costs 20 XP
+    #   3: 30  # Level 3 costs 30 XP
+  storage:
+    max-level: 3
+    cost-type: ECONOMY
+    cost-per-level: 1000
+    # Example of level-specific costs:
+    # levels:
+    #   1: 1000  # Level 1 costs $1000
+    #   2: 2500  # Level 2 costs $2500
+    #   3: 5000  # Level 3 costs $5000
+
+# Messages
+messages:
+  prefix: "&7[&bChunkCollect+&7] "
+  collector-placed: "&aCollector placed successfully!"
+  collector-removed: "&cCollector removed."
+  no-permission: "&cYou don't have permission to do that."
+  max-collectors-reached: "&cYou've reached the maximum number of collectors in this chunk."
+  chest-linked: "&aChest linked successfully!"
+  chest-unlinked: "&cChest unlinked."
+  max-linked-chests-reached: "&cYou've reached the maximum number of linked chests."
+  chest-linking-mode: "&eClick a chest to link it to your collector."
+  chest-linking-cancelled: "&cChest linking cancelled."
+  chest-already-linked: "&cThis chest is already linked to a collector."
+  collector-given: "&aGave %amount% collector(s) to %player%."
+  collector-received: "&aYou received %amount% collector(s)."
+  collector-not-added: "&cCould not give %amount% collector(s) due to full inventory."

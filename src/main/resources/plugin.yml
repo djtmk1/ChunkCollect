@@ -1,0 +1,30 @@
+name: ChunkCollect
+version: '1.0'
+main: org.djtmk.chunkcollect.ChunkCollect
+api-version: '1.21'
+authors: [ djtmk ]
+description: A lightweight, upgradeable chunk-based item collector plugin
+softdepend: [Vault, PlayerPoints]
+
+commands:
+  chunkcollect:
+    description: Main command for ChunkCollect+
+    aliases: [cc]
+    usage: /cc <create|remove|gui|list|reload|tp|give>
+
+permissions:
+  chunkcollect.use:
+    description: Allows placing and interacting with collectors
+    default: true
+  chunkcollect.admin:
+    description: Admin-level permissions
+    default: op
+    children:
+      chunkcollect.use: true
+      chunkcollect.bypass.limit: true
+  chunkcollect.bypass.limit:
+    description: Allows exceeding per-chunk collector limits
+    default: op
+  chunkcollect.give:
+    description: Allows giving collectors to players
+    default: op
